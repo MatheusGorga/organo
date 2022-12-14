@@ -1,3 +1,4 @@
+import Button from '../Button/Button';
 import CampoTexto from '../CampoTexto/CampoTexto';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import './Formulario.css';
@@ -12,6 +13,7 @@ function Formulario() {
     'Mobile',
     'Inovação e Gestão',
   ];
+
   return (
     <section className='formulario'>
       <form>
@@ -20,7 +22,7 @@ function Formulario() {
         <CampoTexto label='Cargo' placeholder='Digite seus Cargo' />
         <CampoTexto label='Imagem' placeholder='Informe o endereço da Imagem' />
         <ListaSuspensa label='Time' lista={OPTIONS} />
-        <button className='submitForm'>Criar card</button>
+        <Button>Criar Card</Button>
       </form>
     </section>
   );
