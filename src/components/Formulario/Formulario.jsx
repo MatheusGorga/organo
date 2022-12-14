@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Button from '../Button/Button';
 import CampoTexto from '../CampoTexto/CampoTexto';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
@@ -14,9 +15,20 @@ function Formulario() {
     'Inovação e Gestão',
   ];
 
+  const [nome, setNome] = useState('');
+  const [cargo, setCargo] = useState('');
+  const [imagem, setImagem] = useState('');
+  const [time, setTime] = useState('');
+
   const aoSalvar = (e) => {
     e.preventDefault();
-    console.log('Form foi salvo');
+    let data = {
+      nome,
+      cargo,
+      imagem,
+      time,
+    };
+    console.log(data);
   };
 
   return (
@@ -27,14 +39,29 @@ function Formulario() {
           label='Nome'
           placeholder='Digite seus Nome'
           obrigatorio={true}
+          valor={nome}
+          aoAlterado={(valor) => setNome(valor)}
         />
         <CampoTexto
           label='Cargo'
           placeholder='Digite seus Cargo'
           obrigatorio={true}
+          valor={cargo}
+          aoAlterado={(valor) => setCargo(valor)}
         />
-        <CampoTexto label='Imagem' placeholder='Informe o endereço da Imagem' />
-        <ListaSuspensa label='Time' lista={OPTIONS} obrigatorio={true} />
+        <CampoTexto
+          label='Imagem'
+          placeholder='Informe o endereço da Imagem'
+          valor={imagem}
+          aoAlterado={(valor) => setImagem(valor)}
+        />
+        <ListaSuspensa
+          label='Time'
+          lista={OPTIONS}
+          obrigatorio={true}
+          valor={time}
+          aoAlterado={(valor) => setTime(valor)}
+        />
         <Button>Criar Card</Button>
       </form>
     </section>
