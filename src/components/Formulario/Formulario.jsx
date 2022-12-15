@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto/CampoTexto';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import './Formulario.css';
 
-function Formulario() {
+function Formulario(props) {
   const OPTIONS = [
     'Programação',
     'Front-End',
@@ -22,13 +22,12 @@ function Formulario() {
 
   const aoSalvar = (e) => {
     e.preventDefault();
-    let data = {
+    props.aoColaboradorCadastrado({
       nome,
       cargo,
       imagem,
       time,
-    };
-    console.log(data);
+    });
   };
 
   return (
