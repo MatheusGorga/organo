@@ -1,0 +1,21 @@
+.time {
+  padding: 32px;
+  text-align: center;
+  background-color: #D9F7E9;
+}
+
+.time h3 {
+  font-family: 'Prata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 43px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #212121;
+  border-bottom: 4px solid #57c278;
+  display: inline-block;
+  padding-bottom: 8px;
+}
