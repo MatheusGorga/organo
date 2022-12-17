@@ -1,7 +1,6 @@
 import './colaborador.css';
 
 function Colaborador(props) {
-  console.log(props);
   const corFundocard = props.cor;
   return (
     <div className='card-colaborador'>
