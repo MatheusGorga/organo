@@ -20,10 +20,18 @@ function Time(props) {
         {props.nome}
       </h3>
 
-      <Colaborador
-        nome={'Matheus Gorga'}
-        img={'http://github.com/MatheusGorga.png'}
-      />
+      <div className='colaboradores'>
+        {props.colaboradores.map((colaborador) => (
+          <Colaborador
+            key={colaborador.nome}
+            nome={colaborador.nome}
+            img={colaborador.imagem}
+            cargo={colaborador.cargo}
+            time={colaborador.time}
+            cor={corPrimaria}
+          />
+        ))}
+      </div>
     </section>
   );
 }
