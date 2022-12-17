@@ -1,3 +1,4 @@
+import Colaborador from '../colaborador/Colaborador';
 import './Time.css';
 
 function Time(props) {
@@ -18,6 +19,11 @@ function Time(props) {
       >
         {props.nome}
       </h3>
+
+      <Colaborador
+        nome={'Matheus Gorga'}
+        img={'http://github.com/MatheusGorga.png'}
+      />
     </section>
   );
 }
