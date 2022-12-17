@@ -5,15 +5,7 @@ import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import './Formulario.css';
 
 function Formulario(props) {
-  const OPTIONS = [
-    'Programação',
-    'Front-End',
-    'Data Science',
-    'Devops',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão',
-  ];
+  const OPTIONS = props.times;
 
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
