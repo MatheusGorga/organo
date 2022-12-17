@@ -13,7 +13,7 @@ function Colaborador(props) {
       >
         <img src={props.img} alt={props.nome} />
       </div>
-      <div className='rodape'>
+      <div className='colaborador-rodape'>
         <h4>{props.nome}</h4>
         <h5>{props.cargo}</h5>
       </div>
