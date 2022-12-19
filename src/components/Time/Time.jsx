@@ -1,34 +1,33 @@
 import Colaborador from '../colaborador/Colaborador';
+import hexToRgba from 'hex-to-rgba';
 import './Time.css';
 
-function Time(props) {
-  let corPrimaria = props.corPrimaria;
-  let corSecundaria = props.corSecundaria;
-
+function Time({ time, mudarCor, aoDeletar, colaboradores }) {
   return (
-    props.colaboradores.length > 0 && (
+    colaboradores.length > 0 && (
       <section
         className='time'
         style={{
-          backgroundColor: corSecundaria,
+          backgroundImage: 'url(/assets/fundo.png)',
+          backgroundColor: hexToRgba(`${time.cor}`, '0.6'),
         }}
       >
         <input
           type='color'
-          value={corPrimaria}
-          onChange={(e) => props.mudarCor(e.target.value, props.nome)}
+          value={time.cor}
+          onChange={(e) => mudarCor(e.target.value, time.nome)}
           className='input-color'
         />
         <h3
           style={{
-            borderBottom: '4px solid' + corPrimaria,
+            borderBottom: '4px solid' + time.cor,
           }}
         >
-          {props.nome}
+          {time.nome}
         </h3>
 
         <div className='colaboradores'>
-          {props.colaboradores.map((colaborador, indice) => {
+          {colaboradores.map((colaborador, indice) => {
             return (
               <Colaborador
                 key={indice}
@@ -36,8 +35,8 @@ function Time(props) {
                 img={colaborador.imagem}
                 cargo={colaborador.cargo}
                 time={colaborador.time}
-                cor={corPrimaria}
-                aoDeletar={props.aoDeletar}
+                cor={time.cor}
+                aoDeletar={aoDeletar}
               />
             );
           })}
