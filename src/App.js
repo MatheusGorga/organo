@@ -6,10 +6,30 @@ import Time from './components/Time/Time';
 
 
 function App() {
-  const [colaboradores, setColaboradores] = useState([])
+  const [colaboradores, setColaboradores] = useState([
+    {
+      "nome": "matheus ",
+      "cargo": "Dev",
+      "imagem": "nenhuma",
+      "time": "Data Science"
+    },
+    {
+      "nome": "gorga",
+      "cargo": "sl",
+      "imagem": "asadasd",
+      "time": "Front-End"
+    }
+  ])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     setColaboradores([...colaboradores, colaborador])
+  }
+
+
+  const deletarColaborador = (indice) => {
+    console.log(
+      'laslaslaslas'
+    )
   }
 
   const TIMES = [
@@ -63,6 +83,7 @@ function App() {
           corPrimaria={time.corPrimaria}
           corSecundaria={time.corSecundaria}
           colaboradores={colaboradores.filter((colaborador) => colaborador.time === time.nome)}
+          aoDeletar={deletarColaborador}
         />)}
 
       <Rodape />

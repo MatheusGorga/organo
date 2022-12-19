@@ -1,9 +1,16 @@
 import './colaborador.css';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 function Colaborador(props) {
   const corFundocard = props.cor;
   return (
     <div className='card-colaborador'>
+      <AiFillCloseCircle
+        size={24}
+        className='deletar'
+        onClick={props.aoDeletar}
+      />
+
       <div
         className='cabecalho'
         style={{

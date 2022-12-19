@@ -22,16 +22,19 @@ function Time(props) {
         </h3>
 
         <div className='colaboradores'>
-          {props.colaboradores.map((colaborador) => (
-            <Colaborador
-              key={colaborador.nome}
-              nome={colaborador.nome}
-              img={colaborador.imagem}
-              cargo={colaborador.cargo}
-              time={colaborador.time}
-              cor={corPrimaria}
-            />
-          ))}
+          {props.colaboradores.map((colaborador, indice) => {
+            return (
+              <Colaborador
+                key={indice}
+                nome={colaborador.nome}
+                img={colaborador.imagem}
+                cargo={colaborador.cargo}
+                time={colaborador.time}
+                cor={corPrimaria}
+                aoDeletar={props.aoDeletar}
+              />
+            );
+          })}
         </div>
       </section>
     )
