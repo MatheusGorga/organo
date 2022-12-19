@@ -13,6 +13,12 @@ function Time(props) {
           backgroundColor: corSecundaria,
         }}
       >
+        <input
+          type='color'
+          value={corPrimaria}
+          onChange={(e) => props.mudarCor(e.target.value, props.nome)}
+          className='input-color'
+        />
         <h3
           style={{
             borderBottom: '4px solid' + corPrimaria,
