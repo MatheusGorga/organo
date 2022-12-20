@@ -4,6 +4,7 @@ import Formulario from './components/Formulario/Formulario';
 import Rodape from './components/Rodape/Rodape';
 import Time from './components/Time/Time';
 import { v4 as uuidv4 } from 'uuid'
+import './index.css'
 
 
 function App() {
@@ -283,15 +284,36 @@ function App() {
     }))
   }
 
+  const [viewForm, setViewForm] = useState(false)
 
   return (
     <div >
       <Banner />
-      <Formulario
-        times={times.map((time) => time.nome)}
-        aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}
-        cadastrarTime={cadastrarTime}
-      />
+      {viewForm && <>
+        <Formulario
+          times={times.map((time) => time.nome)}
+          aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}
+          cadastrarTime={cadastrarTime}
+        />
+      </>}
+
+      <section className='section-org'>
+
+        <span />
+
+        <h3
+          style={{
+            borderBottom: '4px solid #6278F7',
+          }}
+        >
+          Minha Organização
+        </h3>
+
+        <span onClick={() => setViewForm(!viewForm)} >
+          <img src='/assets/button-png.png' alt='botao' />
+        </span>
+
+      </section>
 
       {times.map((time, indice) =>
         <Time
