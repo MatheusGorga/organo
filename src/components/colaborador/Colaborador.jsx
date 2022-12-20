@@ -1,14 +1,14 @@
 import './colaborador.css';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-function Colaborador(props) {
-  const corFundocard = props.cor;
+function Colaborador({ colaborador, cor, aoDeletar }) {
+  const corFundocard = cor;
   return (
-    <div className='card-colaborador'>
+    <div className='card-colaborador' key={colaborador.id}>
       <AiFillCloseCircle
         size={24}
         className='deletar'
-        onClick={props.aoDeletar}
+        onClick={() => aoDeletar(colaborador.id)}
       />
 
       <div
@@ -17,11 +17,11 @@ function Colaborador(props) {
           backgroundColor: corFundocard,
         }}
       >
-        <img src={props.img} alt={props.nome} />
+        <img src={colaborador.imagem} alt={colaborador.nome} />
       </div>
       <div className='colaborador-rodape'>
-        <h4>{props.nome}</h4>
-        <h5>{props.cargo}</h5>
+        <h4>{colaborador.nome}</h4>
+        <h5>{colaborador.cargo}</h5>
       </div>
     </div>
   );

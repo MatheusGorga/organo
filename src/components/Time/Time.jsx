@@ -31,10 +31,7 @@ function Time({ time, mudarCor, aoDeletar, colaboradores }) {
             return (
               <Colaborador
                 key={indice}
-                nome={colaborador.nome}
-                img={colaborador.imagem}
-                cargo={colaborador.cargo}
-                time={colaborador.time}
+                colaborador={colaborador}
                 cor={time.cor}
                 aoDeletar={aoDeletar}
               />

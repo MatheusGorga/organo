@@ -232,10 +232,8 @@ function App() {
   }
 
 
-  const deletarColaborador = (indice) => {
-    console.log(
-      'laslaslaslas'
-    )
+  const deletarColaborador = (id) => {
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
 
   const mudarCorTime = (cor, id) => {
