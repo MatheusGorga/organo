@@ -2,7 +2,7 @@ import Colaborador from '../colaborador/Colaborador';
 import hexToRgba from 'hex-to-rgba';
 import './Time.css';
 
-function Time({ time, mudarCor, aoDeletar, colaboradores }) {
+function Time({ time, mudarCor, aoDeletar, colaboradores, aoFavoritar }) {
   return (
     colaboradores.length > 0 && (
       <section
@@ -30,6 +30,7 @@ function Time({ time, mudarCor, aoDeletar, colaboradores }) {
           {colaboradores.map((colaborador, indice) => {
             return (
               <Colaborador
+                aoFavoritar={aoFavoritar}
                 key={indice}
                 colaborador={colaborador}
                 cor={time.cor}
