@@ -15,7 +15,7 @@ function Time({ time, mudarCor, aoDeletar, colaboradores }) {
         <input
           type='color'
           value={time.cor}
-          onChange={(e) => mudarCor(e.target.value, time.nome)}
+          onChange={(e) => mudarCor(e.target.value, time.id)}
           className='input-color'
         />
         <h3
